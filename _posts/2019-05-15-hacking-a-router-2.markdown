@@ -15,13 +15,13 @@ This is what the inside of the router looks like:
 
 ### Hardware Summary
 
-*   Purple  -   DC-IN and Reset/WPS button  
-*   Orange  -   1 WAN port + 3 LAN ports
-*   Red     -   Main CPU (RTL8197FNT)  
-*   Yellow  -   Network Controller (RTL8812BRH)  
-*   Green   -   Flash Memory (gd25q16)  
-*   Blue    -   UART Serial Interface (GND, RX, TX)  
-*   Cyan    -   4 LEDs  
+**1.**  DC-IN and Reset/WPS button  
+**2.**  1 WAN port + 3 LAN ports
+**3.**  Main CPU (RTL8197FNT)  
+**4.**  Network Controller (RTL8812BRH)  
+**5.**  Flash Memory (gd25q16)  
+**6.**  UART Serial Interface (GND, RX, TX)  
+**7.**  4 LEDs  
 
 Now that we know what's on the PCB it's time to get to know the parts in more detail.  
 
