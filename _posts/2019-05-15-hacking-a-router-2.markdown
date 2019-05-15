@@ -11,7 +11,7 @@ Now that we have everything to get started it's time to take a closer look at th
 
 This is what the inside of the router looks like:
 
-![The PCB](/assets/hackingARouter/02/pcb.jpg)
+![The PCB]({{ site.url }}/assets/hackingARouter/02/pcb.jpg)
 
 ### Hardware Summary
 
@@ -52,13 +52,13 @@ There are a few methods to identify those connections. You can either use a logi
 But before you connect your USB-Serial converter you should check the voltage potential on it's connections. Mine has a jumper to switch between 3.3V and 5V. It's important to match those with your device, if you have a converter that only has 5V for example, you should build a [voltage divider](https://www.instructables.com/id/Simple-Voltage-Divider/) and bring the voltage to a compatible level.  
 At this point you're ready to hook up your USB-Serial converter. Connect GND to GND, TX to what you think is RX and RX to what you think is TX (Yes you connect them to the opposite).  
 
-![Connected USB-Serial Converter](/assets/hackingARouter/02/connected.jpg)
+![Connected USB-Serial Converter]({{ site.url }}/assets/hackingARouter/02/connected.jpg)
 
 Then you start a terminal on your computer, I'm using picocom, and set the baudrate to one of the common ones (110, 300, 600, 1200, 2400, 4800, 9600, 14400, 19200, 38400, 57600, 115200, 128000 or 256000). Then connect your device and watch the terminal, if you get any output, even if it's garbage, then you most likely have it hooked up correctly. If you don't get anything try to swap the TX and RX connections.  
-![Garbage output](/assets/hackingARouter/02/garbage.gif)
+![Garbage output]({{ site.url }}/assets/hackingARouter/02/garbage.gif)
 
 This kind of output is caused by a mismatching baudrate. To get proper output we need to find the right baudrate, which is often one of the ones mentioned above.  
 In this case it's 38400 and by setting that baudrate we get this output:  
-![Proper output](/assets/hackingARouter/02/output.gif)  
+![Proper output]({{ site.url }}/assets/hackingARouter/02/output.gif)  
 
 We're going to explore the serial interface more in the next part.
