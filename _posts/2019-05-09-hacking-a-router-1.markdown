@@ -18,7 +18,7 @@ I have to say it takes surprisingly little equipment to get started:
 Why does it have to be cheap?  
 Because you might end up destroying the device. In my opinion something like a cheap chinese router is a good first target. My particular model is the Tenda AC6.  
 
-![The router]({{site.baseurl}}/assets/hackingARouter/01/router.jpg)
+![The router](/{{site.baseurl}}/assets/hackingARouter/01/router.jpg)
     
 I initially chose this model after researching a bit 
 and reading that it came with linux and an ARM cpu.  
@@ -34,7 +34,7 @@ which can help you a lot when trying to get in.
 Pay attention to the voltage it uses, many embedded devices use 3.3V,
 connecting a 5V device will cause damage.
 
-![Usb-Serial Converter]({{site.baseurl}}/assets/hackingARouter/01/usbSerial.jpg)
+![Usb-Serial Converter](/{{site.baseurl}}/assets/hackingARouter/01/usbSerial.jpg)
 
 ### 3. A multimeter:  
 A multimeter is pretty much necessary for any hardware hacking adventure.
@@ -46,7 +46,7 @@ With a multimeter you can figure out which of them GND and VCC are,
 leaving you only with 2 connections to guess.
 Getting TX and RX mixed up usually won't cause any damage.
 
-![Multimeter]({{site.baseurl}}/assets/hackingARouter/01/multimeter.jpg)
+![Multimeter](/{{site.baseurl}}/assets/hackingARouter/01/multimeter.jpg)
 
 All of this might run you about $50-$60.
 
