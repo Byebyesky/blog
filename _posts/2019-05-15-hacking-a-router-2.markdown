@@ -16,7 +16,7 @@ This is what the inside of the router looks like:
 ### Hardware Summary
 
 **1.**  DC-IN and Reset/WPS button  
-**2.**  1 WAN port + 3 LAN ports
+**2.**  1 WAN port + 3 LAN ports  
 **3.**  Main CPU (RTL8197FNT)  
 **4.**  Network Controller (RTL8812BRH)  
 **5.**  Flash Memory (gd25q16)  
