@@ -1,0 +1,63 @@
+---
+layout: "post"
+title:  "Hackcon 2018 - BOF"
+date:   2018-08-17 04:12:18 +0000
+categories: ctf hackcon
+---
+
+The name of the challenge suggests that this is a simple BufferOverflow.
+Opening it we get greeted with this:
+![Mission](/{{site.baseurl}}/assets/ctf/hackcon/mission.png)
+
+Connecting to the server greets us with this:
+![netcat](/{{site.baseurl}}/assets/ctf/hackcon/netcat.png)
+
+I downloaded the binary and used checksec to check whether there is any protection.
+Turns out there is none:
+![Checksec](/{{site.baseurl}}/assets/ctf/hackcon/checksec.png)
+
+Then I opened it in radare2 to learn more about the functions.
+First analyzing the binary with `aa` and then listing the functions with `afl` reveals this:
+![Radare afl](/{{site.baseurl}}/assets/ctf/hackcon/radare2-afl.png)
+
+
+The two functions that seem interesting to me are sym.main and `sym.callMeMaybe`.  
+Let's start by having a look at the main function.
+Seeking to it with `s sym.main` and printing the disassembly with `pdf` reveals this:  
+![Disassemble Main](/{{site.baseurl}}/assets/ctf/hackcon/disassemble-main.png)
+
+With this we found our vulnerability!  
+The `gets()` function is vulnerable to bufferoverflows!
+And looking at the lea instruction before the call to `gets()` we can infer that our buffer is 0x20 bytes large.
+This seem to be all the interesting bits of the main function let's take a look at callMeMaybe function:  
+![Disassemble CallMeMaybe](/{{site.baseurl}}/assets/ctf/hackcon/disassemble-callmemaybe.png)
+
+Neat! This function opens the flag and prints it to us!
+Now we only need to exploit the bufferoverflow to redirect code execution to the callMeMaybe function,
+in order to obtain the flag!  
+So let's write down it's address `0x00400766` and get exploiting!
+
+### So what did we find out so far?
+
+We got a buffer that is 0x20 bytes in size.  
+We found the address of the function that we want to call at `0x00400766`.  
+`gets()` is vulnerable to buffer overflows. 
+
+### What do we need to exploit this executable?
+
+When loading it into GDB and taking a look at how the stack looks at the return instruction,
+we see that the buffer starts at `0x7ffffffedd40`.
+The return pointer is at `0x7ffffffedd68`.
+Substracting those two gives us a result of 0x28 bytes.
+That means we just write 40 characters of garbage and then the return address.
+
+Since intel systems are little endian we need to prepare our function address properly:
+
+`rip = "\x66\x07\x40\x00\x00\x00\x00"`
+
+And then we just construct the payload:
+
+`A*40 + rip`
+
+Sending that to the server yields the flag:
+![Flag](/{{site.baseurl}}/assets/ctf/hackcon/flag.png)
