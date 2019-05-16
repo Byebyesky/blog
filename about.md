@@ -7,9 +7,10 @@ permalink: /about/
 I'm Flyingsky, a very curious person!  
 I'm not afraid of learning something new or failing on the way of doing so.  
 Quite the opposite, it excites me when I finally figure out how to do something difficult.  
+My interest mostly lies in binary reverse engineering, but I like challenging myself and trying something new. 
 
-My interest mostly lies in binary reverse engineering, but I like challenging myself and trying something new.  
-I wrote a (german) [whitepaper](https://github.com/Byebyesky/IT-Security-Projekt/raw/master/Dokumente/Whitepaper_Projekt_IT-Sicherheit_Kolz_und_Klein.pdf) and [proof of concept exploits](https://github.com/Byebyesky/IT-Security-Projekt/tree/master/POC) for a few wordpress vulnerabilities for an IT-Security class in university, which also included a [30-minute long presentation](https://github.com/Byebyesky/IT-Security-Projekt/raw/master/Dokumente/Presentation.pdf).
+I wrote a (german) [whitepaper](https://github.com/Byebyesky/IT-Security-Projekt/raw/master/Dokumente/Whitepaper_Projekt_IT-Sicherheit_Kolz_und_Klein.pdf) and [proof of concept exploits](https://github.com/Byebyesky/IT-Security-Projekt/tree/master/POC) for a few wordpress vulnerabilities for an IT-Security class in university, which also included a [30-minute long presentation](https://github.com/Byebyesky/IT-Security-Projekt/raw/master/Dokumente/Presentation.pdf).  
+I've also worked on a Japanese to English [translation](https://gbatemp.net/threads/maplestory-3ds-the-girl-of-destiny-100-eng-patch-release.430440/) of a game called Maple Story 3DS with others. My tasks were reverse engineering and translating.
 
 My skillset includes:
 * Binary Reverse Engineering  
