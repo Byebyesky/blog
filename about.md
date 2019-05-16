@@ -4,15 +4,24 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I'm Flyingsky, a very curious person!  
+I'm not afraid of learning something new or failing on the way of doing so.  
+Quite the opposite, it excites me when I finally figure out how to do something difficult.  
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+My interest mostly lies in binary reverse engineering, but I like challenging myself and trying something new.  
+I wrote a (german) [whitepaper](https://github.com/Byebyesky/IT-Security-Projekt/raw/master/Dokumente/Whitepaper_Projekt_IT-Sicherheit_Kolz_und_Klein.pdf) and [proof of concept exploits](https://github.com/Byebyesky/IT-Security-Projekt/tree/master/POC) for a few wordpress vulnerabilities for an IT-Security class in university, which also included a [30-minute long presentation](https://github.com/Byebyesky/IT-Security-Projekt/raw/master/Dokumente/Presentation.pdf).
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+My skillset includes:
+* Binary Reverse Engineering  
+* In-depth Linux knowledge  
+* Experience with Python, C and C++  
+* Experience with embedded systems  
+* Electronics knowledge  
+* Fluency in English and German  
+* Advanced level in Japanese  
 
+Got a job for me or want to contact me?  
 
-[jekyll-organization]: https://github.com/jekyll
+[Mastodon](https://niu.moe/@0x42Sky)  
+[Twitter](https://twitter.com/0x41Sky)  
+[Github](https://github.com/Byebyesky)  
