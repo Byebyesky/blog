@@ -25,4 +25,4 @@ sys.stdout.flush()
 
 Running this script yielded a text about ascii which contained the flag: 
 
-![Flag](/{{site.baseurl}}/assets/ctf/hackcon/findMe/flag.png)
+![Flag]({{site.baseurl}}/assets/ctf/hackcon/findMe/flag.png)

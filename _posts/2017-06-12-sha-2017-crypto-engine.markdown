@@ -14,30 +14,30 @@ It was the only challenge I was able to solve though, because that day I only ha
 Anyways let's get to the write up:
 
 When you clicked on the challange you got greeted by this:  
-![Task](/{{site.baseurl}}/assets/ctf/cryptoEngine/task.png)
+![Task]({{site.baseurl}}/assets/ctf/cryptoEngine/task.png)
 
 If you clicked on the "crypto engine" link you got presented a input box that allowed you to encrypt your own input.  
 
-![Text Box](/{{site.baseurl}}/assets/ctf/cryptoEngine/box.png)
+![Text Box]({{site.baseurl}}/assets/ctf/cryptoEngine/box.png)
 
 If you clicked on the "flag" link you got this:  
 
-![Encrypted Flag](/{{site.baseurl}}/assets/ctf/cryptoEngine/encFlag.png)
+![Encrypted Flag]({{site.baseurl}}/assets/ctf/cryptoEngine/encFlag.png)
 
 The first thing I tried was, what happens if I put in some random text so I put in 1 A and it told me that there is "no text to encrypt". So there is a minimum input length.
 I tried `AA` with the same result. But with `AAA` I got this:  
 
-![Input AAA](/{{site.baseurl}}/assets/ctf/cryptoEngine/aaa.png)
+![Input AAA]({{site.baseurl}}/assets/ctf/cryptoEngine/aaa.png)
 
 So the minimum is 3 characters. Next I put in `AAAA`, and this time it worked and gave me this result:  
 
-![Input AAAA](/{{site.baseurl}}/assets/ctf/cryptoEngine/aaaa.png)
+![Input AAAA]({{site.baseurl}}/assets/ctf/cryptoEngine/aaaa.png)
 
 So everything above 3 characters works! Next I put in some random text and looked if there is anything useful to notice, and there was! I noticed that 3 characters make 1 block and if it's less than 3 it displays a 2 or 4 digit number.
 Next I counted the blocks in the flag picture and calculated `12 * 3 + 2` that the flag was 38 characters long.
 
 (38 * "A")  
-![Input 38 times A](/{{site.baseurl}}/assets/ctf/cryptoEngine/38a.png)
+![Input 38 times A]({{site.baseurl}}/assets/ctf/cryptoEngine/38a.png)
 
 From this picture I saw that the pattern repeats every 8 blocks (24 characters)!
 
@@ -49,23 +49,23 @@ With this in my hands I finally was able to go about solving the challenge. I br
 But after the 3rd block I noticed that certain values seemed to be swapped around. If I put in 0x35 I got 0x65 and vice versa!
 From this I thought I could just put the whole hash into the encryption box and have it decrypt it for me, but that sadly wasn't true.  
 
-![Input 38 times A](/{{site.baseurl}}/assets/ctf/cryptoEngine/fullhash-encryption-wrong.png)
+![Input 38 times A]({{site.baseurl}}/assets/ctf/cryptoEngine/fullhash-encryption-wrong.png)
 
 I tried to understand what was going on and tried encrypting more things. At some point I noticed that the encrypted output changed depending on what preceded it. So I knew I had to decrypt it block for block! Which worked exactly as I thought it would!
 
-![Explanation](/{{site.baseurl}}/assets/ctf/cryptoEngine/explanation.png)
+![Explanation]({{site.baseurl}}/assets/ctf/cryptoEngine/explanation.png)
 
 I put in `0x353149` and got `0x656166`, those are the printable ascii characters e, a and f! I put them after the 2 brute forced blocks and it really was true!
 
-![Encrypt](/{{site.baseurl}}/assets/ctf/cryptoEngine/encrypt.png)
+![Encrypt]({{site.baseurl}}/assets/ctf/cryptoEngine/encrypt.png)
 
 After I knew that decrypting the hash was only a matter of encrypting each block preceded by the right characters.
 
 (the last 2 hex digits put into the encrypt field)
-![Observation 1](/{{site.baseurl}}/assets/ctf/cryptoEngine/observation1.png)
+![Observation 1]({{site.baseurl}}/assets/ctf/cryptoEngine/observation1.png)
 
 (the 0x327d put into the encrypt field, it yields the desired result)
-![Observation 2](/{{site.baseurl}}/assets/ctf/cryptoEngine/observation2-2.png)
+![Observation 2]({{site.baseurl}}/assets/ctf/cryptoEngine/observation2-2.png)
 
 With that I solved the Crypto challenge of the SHA2017 teaser round.
 The whole flag was:  

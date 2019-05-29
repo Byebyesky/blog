@@ -7,30 +7,30 @@ categories: ctf hackcon
 
 The name of the challenge suggests that this is a simple BufferOverflow.
 Opening it we get greeted with this:  
-![Mission](/{{site.baseurl}}/assets/ctf/hackcon/bof/mission.png)
+![Mission]({{site.baseurl}}/assets/ctf/hackcon/bof/mission.png)
 
 Connecting to the server greets us with this:  
-![netcat](/{{site.baseurl}}/assets/ctf/hackcon/bof/netcat.png)
+![netcat]({{site.baseurl}}/assets/ctf/hackcon/bof/netcat.png)
 
 I downloaded the binary and used checksec to check whether there is any protection.
 Turns out there is none:  
-![Checksec](/{{site.baseurl}}/assets/ctf/hackcon/bof/checksec.png)
+![Checksec]({{site.baseurl}}/assets/ctf/hackcon/bof/checksec.png)
 
 Then I opened it in radare2 to learn more about the functions.
 First analyzing the binary with `aa` and then listing the functions with `afl` reveals this:  
-![Radare afl](/{{site.baseurl}}/assets/ctf/hackcon/bof/radare2-afl.png)
+![Radare afl]({{site.baseurl}}/assets/ctf/hackcon/bof/radare2-afl.png)
 
 
 The two functions that seem interesting to me are sym.main and `sym.callMeMaybe`.  
 Let's start by having a look at the main function.
 Seeking to it with `s sym.main` and printing the disassembly with `pdf` reveals this:  
-![Disassemble Main](/{{site.baseurl}}/assets/ctf/hackcon/bof/disassemble-main.png)
+![Disassemble Main]({{site.baseurl}}/assets/ctf/hackcon/bof/disassemble-main.png)
 
 With this we found our vulnerability!  
 The `gets()` function is vulnerable to bufferoverflows!
 And looking at the lea instruction before the call to `gets()` we can infer that our buffer is 0x20 bytes large.
 This seem to be all the interesting bits of the main function let's take a look at callMeMaybe function:  
-![Disassemble CallMeMaybe](/{{site.baseurl}}/assets/ctf/hackcon/bof/disassemble-callmemaybe.png)
+![Disassemble CallMeMaybe]({{site.baseurl}}/assets/ctf/hackcon/bof/disassemble-callmemaybe.png)
 
 Neat! This function opens the flag and prints it to us!
 Now we only need to exploit the bufferoverflow to redirect code execution to the callMeMaybe function,
@@ -60,4 +60,4 @@ And then we just construct the payload:
 `A*40 + rip`
 
 Sending that to the server yields the flag:  
-![Flag](/{{site.baseurl}}/assets/ctf/hackcon/bof/flag.png)
+![Flag]({{site.baseurl}}/assets/ctf/hackcon/bof/flag.png)

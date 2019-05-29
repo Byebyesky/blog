@@ -42,4 +42,4 @@ sys.stdout.flush()
 
 And doing that revealed this greeting and the flag:  
 
-![Flag](/{{site.baseurl}}/assets/ctf/hackcon/diversity/flag.png)
+![Flag]({{site.baseurl}}/assets/ctf/hackcon/diversity/flag.png)

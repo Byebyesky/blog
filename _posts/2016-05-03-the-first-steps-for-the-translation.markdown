@@ -15,28 +15,28 @@ The first thing I had to do was decrypting the .cia file. That was done by using
 After that I had to extract the .cia. I followed Asia81's tutorial on decrypting and extracting CIAs and extracted the .cia with his tools. If you want to decrypt and unpack CIAs yourself, take a look at this [Tutorial](https://gbatemp.net/threads/tutorial-how-to-decrypt-extract-and-rebuild-a-cia.388677/).
 
 Then I had 4 files and 4 folders:  
-![Folders](/{{site.baseurl}}/assets/maple/firstSteps/foldersAndFiles.png)
+![Folders]({{site.baseurl}}/assets/maple/firstSteps/foldersAndFiles.png)
 
 The only one that is important for me is the ExtractedRomFS folder, which contains the graphics, fonts, movies, sounds, some info for the game maybe item IDs (?) and the text.
 
-![extractedRomFS](/{{site.baseurl}}/assets/maple/firstSteps/extractedRomFS.png)
+![extractedRomFS]({{site.baseurl}}/assets/maple/firstSteps/extractedRomFS.png)
 
 Graphics are in the folder "Inactive" and the text is in the folder "Stage":
 
-![Inactive](/{{site.baseurl}}/assets/maple/firstSteps/inactive.png)
+![Inactive]({{site.baseurl}}/assets/maple/firstSteps/inactive.png)
 
-![Stage](/{{site.baseurl}}/assets/maple/firstSteps/stage.png)
+![Stage]({{site.baseurl}}/assets/maple/firstSteps/stage.png)
 
 As you see the Stage folder has many subfolders and it's hard to find the right folder, and not all of those folders contain text files.
 If we enter the first folder, we see this:
 
-![Global Folder](/{{site.baseurl}}/assets/maple/firstSteps/globalFolder.png)
+![Global Folder]({{site.baseurl}}/assets/maple/firstSteps/globalFolder.png)
 
 The .gmm files are the files that contain the text, I don't know what the other files do, but that's okay since I'm just translating the game.
 
 Let's open the Help_title_JP.gmm file, this is the one I translated first, and showed on GBATemp:
 
-![Help Title](/{{site.baseurl}}/assets/maple/firstSteps/helpTitle.png)
+![Help Title]({{site.baseurl}}/assets/maple/firstSteps/helpTitle.png)
 
 Those files look like this, and simply editing them with a text editor is enough to change the text ingame.
 
